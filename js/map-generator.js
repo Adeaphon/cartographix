@@ -26,13 +26,22 @@ function setQueryFunctionality(query) {
 }
 
 function setQueryStyle(query){
-	var water = "0x2a315d";
-	var park = water;
+	
+	var hue = $('#hue-slider').slider("value");
+	
+	var dark = "0x" + tinycolor({h:hue, s:37.78, l:26.47}).toHex();
+	var medium = "0x" + tinycolor({h:hue, s:43.01, l:37.85}).toHex();
+	var light = "0x" + tinycolor({h:hue, s:49.79, l:47.65}).toHex();
+	
 	var road = "0xffffff";
-	var town = "0x3d72b6";
-	var country = "0x37508a";
-	var attraction = road;
-	var base = road;
+	var attraction = "0xffffff";
+	var base = "0xffffff";
+		
+	var water = dark;
+	var park = dark;
+
+	var town = light;
+	var country = medium;
 	
 	query += "&style=feature:all%7Ccolor:" + base;
 	

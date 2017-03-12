@@ -10,3 +10,17 @@ $( "#zoom-slider" ).slider({
 		zoomhandle.text( ui.value );
 	}
 });
+
+var huehandle = $( "#hue-handle" );
+$( "#hue-slider" ).slider({
+	value: 240,
+	min: 0,
+	max: 330,
+	step: 30,
+	create: function() {
+		huehandle.text( $( this ).slider( "value" ) );
+	},
+	slide: function( event, ui ) {
+		huehandle.text( ui.value );
+	}
+});

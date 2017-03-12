@@ -34,6 +34,7 @@ body {
     }
 
 #content {
+	height: 100%;
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -44,7 +45,11 @@ body {
     -ms-flex-item-align: auto;
     align-self: auto;
     }
-	
+
+#content>img {
+	height:100%;
+	width:auto;
+}
 #menu div.numbered-slider {
     width: 3em;
     height: 1.6em;
