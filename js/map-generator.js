@@ -17,7 +17,7 @@ function getMap() {
 }
 
 function setQueryFunctionality(query) {
-	query += "&zoom=" + 15;
+	query += "&zoom=" + $('#zoom-slider').slider("value");
 	query += "&size=" + "620x640";
 	query += "&maptype=" + "roadmap";
 	query += "&scale=" + 2;

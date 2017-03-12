@@ -4,7 +4,10 @@
         <meta name="generator"
         content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
         <link rel="stylesheet" type="text/css" href="css/site.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
         <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/ui.js" defer></script>
         <script src="js/map-generator.js" async=""></script>
         <title>CartoGraphix</title>
     </head>
@@ -23,6 +26,16 @@
                     <td>Location</td>
                     <td>
                         <input id="Location" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Zoom</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="zoom-slider">
+                            <div id="zoom-handle" class="numbered-slider ui-slider-handle"></div>
+                        </div>
                     </td>
                 </tr>
             </table>
