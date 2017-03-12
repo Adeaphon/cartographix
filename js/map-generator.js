@@ -6,8 +6,8 @@ console.log("Running map-generator.js");
 function getMap() {
 
 	var query = "https://maps.googleapis.com/maps/api/staticmap";
-	query += "?center=" + $('#Location').val();
-	query += "&key="+$('#Key').val();
+	query += "?center=" + encodeURIComponent($('#Location').val());
+	query += "&key="+encodeURIComponent($('#Key').val());
 
 	query = setQueryFunctionality(query);
 	query = setQueryStyle(query);
