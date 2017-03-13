@@ -18,9 +18,10 @@ $( "#hue-slider" ).slider({
 	max: 330,
 	step: 30,
 	create: function() {
-		huehandle.text( $( this ).slider( "value" ) );
+		var hue = $( this ).slider( "value" );
+		huehandle.css("background-color", tinycolor({h:hue, s:49.79, l:47.65}).toHexString());
 	},
 	slide: function( event, ui ) {
-		huehandle.text( ui.value );
+		huehandle.css("background-color", tinycolor({h: ui.value, s:49.79, l:47.65}).toHexString());
 	}
 });
