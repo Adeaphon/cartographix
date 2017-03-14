@@ -13,6 +13,7 @@ function getMap() {
 	query = setQueryStyle(query);
 	
 	$("#image").attr("src", query);
+	$("#image-wrapper").show();
 	
 }
 

@@ -1,5 +1,12 @@
+html, body{
+	margin:0px;
+	height:100%;
+	min-height:100%;
+	overflow:hidden;
+}
+
 body {
-    display: -ms-flexbox;
+	display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: row;
@@ -14,47 +21,103 @@ body {
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
 	
-	border-right:2px solid black;
+	background-color:blue;
 }
 
 #menu {
-    -webkit-order: 0;
+    width:  280px;
+	height: 100%;
+	
+	padding-left:20px;
+	
+	background-color:#37378a;
+	
+	-webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
-    -webkit-flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    }
+}
 
 #content {
-	height: 100%;
-    -webkit-order: 0;
+	height:100%;
+	
+	background-color:white;
+	
+	-webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    }
+	
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
 
-#content>img {
-	height:100%;
-	width:auto;
+#image-wrapper {
+
+	margin: 50px;
+	position: relative;
+	
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+#image-wrapper > img {
+	border: 10px solid black;
+	
+	
+	
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
 }
 #menu div.numbered-slider {
-    width: 3em;
-    height: 1.6em;
+    width: 1.5em;
+    height: 1.5em;
     top: 50%;
     margin-top: -.8em;
     text-align: center;
-    line-height: 1.6em;
+    line-height: 1.5em;
   }

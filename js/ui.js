@@ -25,3 +25,5 @@ $( "#hue-slider" ).slider({
 		huehandle.css("background-color", tinycolor({h: ui.value, s:49.79, l:47.65}).toHexString());
 	}
 });
+
+$("#image-wrapper").hide();
