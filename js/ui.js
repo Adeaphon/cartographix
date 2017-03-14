@@ -1,6 +1,6 @@
 var zoomhandle = $( "#zoom-handle" );
 $( "#zoom-slider" ).slider({
-	value: 14,
+	value: 13,
 	min: 5,
 	max: 20,
 	create: function() {
@@ -13,7 +13,7 @@ $( "#zoom-slider" ).slider({
 
 var huehandle = $( "#hue-handle" );
 $( "#hue-slider" ).slider({
-	value: 240,
+	value: 210,
 	min: 0,
 	max: 330,
 	step: 30,

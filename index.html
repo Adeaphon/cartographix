@@ -14,43 +14,33 @@
     </head>
     <body>
         <div id="menu">
-           <h1>CartoGraphix</h1>
-            <h6>v0.0.1</h6>
-            <table>
-                <tr>
-                    <td>Key</td>
-                    <td>
-                        <input id="Key" value="AIzaSyBg7DmTKr7MMRzfcVT1Q9JXx-jI0xNiXME"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Location</td>
-                    <td>
-                        <input id="Location" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">Zoom</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div id="zoom-slider">
-                            <div id="zoom-handle" class="numbered-slider ui-slider-handle"></div>
-                        </div>
-                    </td>
-                </tr>
-				<tr>
-                    <td colspan="2">Hue</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div id="hue-slider">
-                            <div id="hue-handle" class="numbered-slider ui-slider-handle"></div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <button onclick="getMap()">Generate</button>
+           <h1>CARTOGRAPHIX</h1>
+            <h4>v0.0.2</h6>
+			<div class="option-bar">
+				<div class="option-label">Location</div>
+				<input id="location" class="option-value" value="AB24 3LR"/>
+			</div>
+			<div class="option-bar">
+				<div class="option-label">Zoom</div>
+				<div id="zoom-slider" class="option-value">
+					<div id="zoom-handle" class="numbered-slider ui-slider-handle"></div>
+				</div>
+			</div>
+			<div class="option-bar">
+				<div class="option-label">Colour</div>
+				<div id="hue-slider" class="option-value">
+					<div id="hue-handle" class="numbered-slider ui-slider-handle"></div>
+				</div>
+			</div>
+			<div class="option-bar option-checkbox">
+				<div class="option-label">Universities
+				<input id="universities" type="checkbox" class="option-value" checked/></div>
+			</div>
+			<div class="option-bar option-checkbox">
+				<div class="option-label">Parks
+				<input id="parks" type="checkbox" class="option-value" checked/></div>
+			</div>
+            <a id="generate-button" onclick="getMap()">Generate</a>
         </div>
         <div id="content">
 			<div id="image-wrapper">
