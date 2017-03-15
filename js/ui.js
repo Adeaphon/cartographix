@@ -26,4 +26,30 @@ $( "#hue-slider" ).slider({
 	}
 });
 
+function nameSize(size){
+	switch(size){
+		case 1:
+			return "S";
+		case 2:
+			return "M";
+		case 3:
+			return "L";
+		default:
+			return "";
+	}
+}
+
+var sizehandle = $( "#size-handle" );
+$( "#size-slider" ).slider({
+	value: 3,
+	min: 1,
+	max: 3,
+	create: function() {
+		sizehandle.text( nameSize($( this ).slider( "value" )) );
+	},
+	slide: function( event, ui ) {
+		sizehandle.text( nameSize(ui.value) );
+	}
+});
+
 $("#image-wrapper").hide();
