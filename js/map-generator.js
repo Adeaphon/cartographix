@@ -29,10 +29,11 @@ function setQueryFunctionality(query) {
 function setQueryStyle(query){
 	
 	var hue = $('#hue-slider').slider("value");
-	
-	var dark = "0x" + tinycolor({h:hue, s:37.78, l:26.47}).toHex();
-	var medium = "0x" + tinycolor({h:hue, s:43.01, l:37.85}).toHex();
-	var light = "0x" + tinycolor({h:hue, s:49.79, l:47.65}).toHex();
+	var colourful = !$('#greyscale').is(':checked');
+
+	var dark = "0x" + tinycolor({h:hue, s:37.78*colourful, l:26.47}).toHex();
+	var medium = "0x" + tinycolor({h:hue, s:43.01*colourful, l:37.85}).toHex();
+	var light = "0x" + tinycolor({h:hue, s:49.79*colourful, l:47.65}).toHex();
 	
 	var road = "0xffffff";
 	var attraction = "0xffffff";

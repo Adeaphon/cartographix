@@ -184,6 +184,11 @@ input[type="checkbox"].option-value:checked:before {
     margin-top: 1px;
 }
 
+.option-label>div {
+    display: inline-block;
+    width: 105px;
+}
+
 #generate-button{
     border: 3px solid black;
     padding: 10px 20px;
