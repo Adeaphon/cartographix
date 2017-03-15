@@ -58,8 +58,11 @@ function setQueryStyle(query){
 	
 	//Town
 	query += "&style=feature:landscape.man_made%7Ccolor:" + town;
-	//if
-	query += "&style=feature:poi.school%7Ccolor:" + town;
+	if ($('#universities').is(':checked')){
+		query += "&style=feature:poi.school%7Ccolor:" + attraction;
+	} else {
+		query += "&style=feature:poi.school%7Ccolor:" + town;
+	}
 	
 	//Country
 	query += "&style=feature:landscape.natural%7Ccolor:" + country;
@@ -74,7 +77,6 @@ function setQueryStyle(query){
 	query += "&style=feature:poi.place_of_worship%7Ccolor:" + attraction;
 	query += "&style=feature:poi.government%7Ccolor:" + attraction;
 	query += "&style=feature:poi.medical%7Ccolor:" + attraction;
-	query += "&style=feature:poi.school%7Ccolor:" + attraction;
 	
 	//Hide labels
 	query += "&style=feature:all%7Celement:labels%7Cvisibility:off";
