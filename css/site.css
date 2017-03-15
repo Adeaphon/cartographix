@@ -187,7 +187,7 @@ input[type="checkbox"].option-value:checked:before {
 
 .option-label>div {
     display: inline-block;
-    width: 105px;
+    width: 102px;
 }
 
 #generate-button{
