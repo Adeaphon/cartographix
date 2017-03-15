@@ -39,11 +39,16 @@ function setQueryStyle(query){
 	var base = "0xffffff";
 		
 	var water = dark;
-	var park = dark;
 
 	var town = light;
 	var country = medium;
 	
+	if ($('#parks').is(':checked')){
+		var park = dark;
+	} else {
+		var park = medium
+	}
+		
 	query += "&style=feature:all%7Ccolor:" + base;
 	
 	//Water
