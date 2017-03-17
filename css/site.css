@@ -197,3 +197,125 @@ input[type="checkbox"].option-value:checked:before {
     float: right;
     cursor: pointer;
 }
+
+
+#history {
+    width:  252px;
+	height: 100%;
+	
+	padding-left:20px;
+	padding-right:20px;
+	background-color:#3d7ab6;
+	
+	-webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.history-item {
+	height: 68px;
+	width:100%;
+
+	margin-top: 30px;
+	
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;	
+}
+
+.history-icon {
+	flex: 0 0 auto;
+	width: 51px;
+	margin:4px;
+	border: 3px solid black;
+	align-self:stretch;
+}
+
+.history-options {
+	flex: 0 0 auto;
+	width: auto;
+	
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;	
+}
+
+.history-settings {
+	flex: 1 0 auto;
+	
+	-webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+
+.history-settings-row {
+}
+
+.history-settings-row > div{
+	width:20px;
+	height:20px;
+	margin:4px 1px 4px 1px;
+	display:inline-block;
+	vertical-align:top;
+	border: 3px solid black;
+	background-color: #fff;
+	text-align:center;
+	
+}
+
+.history-location {
+
+	margin: 4px 1px 4px 1px;
+	border: 3px solid black;
+	background-color: #fff;
+	line-height: 20px;
+	height: 20px;
+	
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 151px;
+}
+.history-options > div {
+	width:26px;
+	height:26px;
+	margin:4px;
+	
+}
+
