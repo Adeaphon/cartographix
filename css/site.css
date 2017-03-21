@@ -288,7 +288,7 @@ input[type="checkbox"].option-value:checked:before {
 .history-settings-row {
 }
 
-.history-settings-row > div{
+.history-settings-row > *{
 	width:20px;
 	height:20px;
 	margin:4px 1px 4px 1px;
@@ -297,7 +297,28 @@ input[type="checkbox"].option-value:checked:before {
 	border: 3px solid black;
 	background-color: #fff;
 	text-align:center;
+	box-sizing:content-box;
 	
+}
+
+.history-checkbox {
+    /*margin-bottom: -10px;*/
+    -webkit-transition: box-shadow 200ms;
+    -webkit-appearance: none;
+    color: black;
+}
+
+.history-checkbox:checked:before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 13px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-left: 5px;
+    margin-top: 0px;
 }
 
 .history-location {

@@ -7,9 +7,12 @@
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
-        <script src="js/tinycolor.js" defer></script>
+        <script src="js/tinycolor.js"></script>
+		<script src="js/knockout-3.4.2.js"></script>
 		<script src="js/ui.js" defer></script>
-        <script src="js/map-generator.js" async=""></script>
+		<script src="js/map-request.js"></script>
+        <script src="js/map-generator.js"></script>
+        <script src="js/history.js"></script>
         <title>CartoGraphix</title>
     </head>
     <body>
@@ -50,24 +53,24 @@
 				<div class="option-label"><div>Parks</div>
 				<input id="parks" type="checkbox" class="option-value"/></div>
 			</div>
-            <a id="generate-button" onclick="getMap()">Generate</a>
+            <a id="generate-button" data-bind="click: getMap">Generate</a>
         </div>
         <div id="content">
 			<div id="image-wrapper">
 				<img id="image"/>
 			</div>
         </div>
-		<div id="history">
+		<div id="history" data-bind="foreach: requests">
 			<div class="history-item">
-				<img class="history-icon" src="https://maps.googleapis.com/maps/api/staticmap?center=AB24%203LR&key=AIzaSyBg7DmTKr7MMRzfcVT1Q9JXx-jI0xNiXME&zoom=13&scale=2&size=600x640&maptype=roadmap&style=feature:all%7Ccolor:0xffffff&style=feature:water%7Ccolor:0x2a435d&style=feature:poi%7Ccolor:0x2a435d&style=feature:road%7Ccolor:0xffffff&style=feature:transit%7Ccolor:0xffffff&style=feature:landscape.man_made%7Ccolor:0x3d7ab6&style=feature:poi.school%7Ccolor:0xffffff&style=feature:landscape.natural%7Ccolor:0x37618a&style=feature:poi.park%7Ccolor:0x37618a&style=feature:poi.sports_complex%7Ccolor:0x37618a&style=feature:poi.business%7Ccolor:0x37618a&style=feature:poi.attraction%7Ccolor:0xffffff&style=feature:poi.place_of_worship%7Ccolor:0xffffff&style=feature:poi.government%7Ccolor:0xffffff&style=feature:poi.medical%7Ccolor:0xffffff&style=feature:all%7Celement:labels%7Cvisibility:off"/>
+				<img class="history-icon" data-bind="attr: {src: query()}"/>
 				<div class="history-settings">
-					<div class="history-location"></div>
+					<div class="history-location" data-bind="text: place"></div>
 					<div class="history-settings-row">
-						<div class="history-setting history-zoom">13</div>
-						<div class="history-setting history-size">L</div>
-						<div class="history-setting history-checkbox history-greyscale"></div>
-						<div class="history-setting history-checkbox history-schools checked"></div>
-						<div class="history-setting history-checkbox history-parks"></div>
+						<div class="history-setting history-zoom" data-bind="text: zoom"></div>
+						<div class="history-setting history-size" data-bind="text: sizeIcon"></div>
+						<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: greyscale" disabled/>
+						<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: schools" disabled/>
+						<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: parks" disabled/>
 					</div>
 				</div>
 				<div class="history-options">
