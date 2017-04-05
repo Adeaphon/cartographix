@@ -61,7 +61,7 @@
         </div>
 		<div id="history" data-bind="foreach: maps">
 			<div class="history-item">
-				<img class="history-icon" data-bind="attr: {src: asQuery()}"/>
+				<img class="history-icon" data-bind="click: display, attr: {src: asQuery()}"/>
 				<div class="history-settings">
 					<div class="history-location" data-bind="text: place"></div>
 					<div class="history-settings-row">
