@@ -1,18 +1,54 @@
-function MapRequest(place, zoom, hue, size, greyscale, schools, parks){
+/**
+ * Object representing a map request for a particular location. 
+ * Can be converted to a google maps query, and displayed using the "display" method.
+ *
+ * place     - The string describing the center of this map.
+ * zoom      - How zoomed in the map is. https://developers.google.com/maps/documentation/static-maps/intro#Zoomlevels
+ * size      - Relative size of the map as an integer from 1 (smallest) to 3 (biggest). Affects both dimensions and scale. https://developers.google.com/maps/documentation/static-maps/intro#scale_values
+ * hue       - The hue to use for all colours. A value from 0 to 360. Uses a HSL model rather than HSV. 
+ * greyscale - Whether or not the map should be grey. 
+ * schools   - Whether or not schools should be highlighted. Optional because some campuses cover a lot of ground.
+ * parks     - Whether or not parkland should be highlighted. Looks interesting in areas without water (but not in national parks).
+ */
+function MapRequest(place, zoom, size, hue, greyscale, schools, parks){
 	var self = this;
 	
+	// The string describing the center of this map.
 	self.place = place;
+	
+	// How zoomed in the map is. https://developers.google.com/maps/documentation/static-maps/intro#Zoomlevels
 	self.zoom = zoom;
+	
+	// Relative size of the map as an integer from 1 (smallest) to 3 (biggest). Affects both dimensions and scale. https://developers.google.com/maps/documentation/static-maps/intro#scale_values
 	self.size = size;
+	
+	// A visual representation of size. S, M, or L.
 	self.sizeIcon = nameSize(size);
 	
+	// The hue to use for all colours. A value from 0 to 360. Uses a HSL model rather than HSV. 
 	self.hue = hue;
 	
+	// Whether or not the map should be grey. 
 	self.greyscale = greyscale;
+	
+	// Whether or not schools should be highlighted. Optional because some campuses cover a lot of ground.
 	self.schools = schools;
+	
+	// Whether or not parkland should be highlighted. Looks interesting in areas without water (but not national parks).
 	self.parks = parks;
 
-	self.query = function(){
+	/**
+	 * Draws this map in the main viewport.
+	 */
+	self.display = function(){
+		$("#image").attr("src", self.asQuery());
+		$("#image-wrapper").show();
+	}
+	
+	/**
+	 * Converts this object into a qoogle maps query.
+	 */
+	self.asQuery = function(){
 		var query = "https://maps.googleapis.com/maps/api/staticmap";
 		
 		query += "?key=AIzaSyBg7DmTKr7MMRzfcVT1Q9JXx-jI0xNiXME";

@@ -26,6 +26,9 @@ $( "#hue-slider" ).slider({
 	}
 });
 
+/**
+ * Takes size as an integer (1-3), and converts it into S, M, or L.
+ */
 function nameSize(size){
 	switch(size){
 		case 1:
