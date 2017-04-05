@@ -117,6 +117,7 @@ body {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
+    box-sizing: border-box;
 }
 
 #image-wrapper > img {
