@@ -47,7 +47,8 @@ function MapViewModel(){
 	self.removeMap = function(map) {
 		self.removedMap = map;
 		self.removalIndex = self.maps.indexOf(map);
-		self.maps.remove(map);
+		self.maps.remove(map);	
+		$("#deletion-tab").show();
 	}
 	
 	/**
@@ -56,6 +57,8 @@ function MapViewModel(){
 	self.restoreMap = function() {
 		if(self.removedMap){
 			self.maps.splice(self.removalIndex, 0, self.removedMap);
+			self.removedMap = null;
+			$("#deletion-tab").hide();
 		}
 	}
 }

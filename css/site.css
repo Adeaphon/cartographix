@@ -345,3 +345,14 @@ input[type="checkbox"].option-value:checked:before {
 	cursor: pointer;
 }
 
+#deletion-tab {
+    background-color: #37618a;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+	width: 288px;
+    padding: 2px;
+    cursor: pointer;
+    text-align: center;
+}
+

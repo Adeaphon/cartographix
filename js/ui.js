@@ -56,3 +56,4 @@ $( "#size-slider" ).slider({
 });
 
 $("#image-wrapper").hide();
+$("#deletion-tab").hide();
