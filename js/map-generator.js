@@ -33,6 +33,31 @@ function MapViewModel(){
 							  $('#parks').is(':checked') );
 	}
 
+	// Last map that was removed
+	self.removedMap = null;
+	
+	// Index the last map was removed from
+	self.removalIndex = 0;
+	
+	/**
+	 * Removes the supplied map from the history. Saves it incase it was deleted by accident.
+	 *
+	 * map - The map to delete.
+	 */
+	self.removeMap = function(map) {
+		self.removedMap = map;
+		self.removalIndex = self.maps.indexOf(map);
+		self.maps.remove(map);
+	}
+	
+	/**
+	 * Restores the last deleted map to its original position.
+	 */
+	self.restoreMap = function() {
+		if(self.removedMap){
+			self.maps.splice(self.removalIndex, 0, self.removedMap);
+		}
+	}
 }
 
 /**

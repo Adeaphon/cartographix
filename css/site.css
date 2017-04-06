@@ -339,6 +339,9 @@ input[type="checkbox"].option-value:checked:before {
 	width:26px;
 	height:26px;
 	margin:4px;
-	
+    text-align: center;
+    vertical-align: middle;
+	font-size: 26px;
+	cursor: pointer;
 }
 

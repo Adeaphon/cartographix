@@ -5,6 +5,7 @@
         content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
         <link rel="stylesheet" type="text/css" href="css/site.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/tinycolor.js"></script>
@@ -74,7 +75,7 @@
 				</div>
 				<div class="history-options">
 					<div class="history-view"></div>
-					<div class="history-delete"></div>
+					<div class="history-delete fa fa-times" data-bind="click: $root.removeMap" aria-hidden="true""></div>
 				</div>
 			</div>
 		</div>
