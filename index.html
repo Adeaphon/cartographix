@@ -6,10 +6,11 @@
         <link rel="stylesheet" type="text/css" href="css/site.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
 		<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <script src="js/jquery-ui.min.js"></script>
-        <script src="js/tinycolor.js"></script>
-		<script src="js/knockout-3.4.2.js"></script>
+        <script src="js/3rd-party/jquery-3.1.1.min.js"></script>
+        <script src="js/3rd-party/jquery-ui.min.js"></script>
+        <script src="js/3rd-party/tinycolor.js"></script>
+		<script src="js/3rd-party/knockout-3.4.2.js"></script>
+		<script src="js/3rd-party/knockout-sortable.js"></script>
 		<script src="js/ui.js" defer></script>
 		<script src="js/map-request.js"></script>
         <script src="js/map-generator.js"></script>
@@ -60,7 +61,7 @@
 				<img id="image"/>
 			</div>
         </div>
-		<div id="history" data-bind="foreach: maps">
+		<div id="history" data-bind="sortable: maps">
 			<div class="history-item">
 				<img class="history-icon" data-bind="click: display, attr: {src: asQuery()}"/>
 				<div class="history-settings">
@@ -74,8 +75,10 @@
 					</div>
 				</div>
 				<div class="history-options">
-					<div class="history-view"></div>
-					<div class="history-delete fa fa-times" data-bind="click: $root.removeMap" aria-hidden="true""></div>
+					<div class="history-view fa fa-arrows" aria-hidden="true">
+						<!--Doesn't actually do anthing, just wanted to highlight you can drag-->
+					</div>
+					<div class="history-delete fa fa-times" data-bind="click: $root.removeMap" aria-hidden="true"></div>
 				</div>
 			</div>
 		</div>
