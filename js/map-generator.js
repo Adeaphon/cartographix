@@ -1,4 +1,21 @@
 /**
+ * Checks to see if the supplied maps will fit in the supplied area.
+ * Treats large maps as the base, and considers things relative to them.
+ *
+ * larges  - The number of large maps
+ * mediums - The number of medium maps
+ * smalls  - The number of small maps
+ * height  - How many large maps can be stretched on the y axis
+ * width   - How many large maps can be stretched on the x axis 
+ */
+function mapsFit(larges, mediums, smalls, height, width){
+	var area = height * width;
+	return (larges <= area) && 
+		   (4*larges + mediums <= 4*area) && 
+		   (16*larges + 4 * mediums + smalls <= 16*area);
+}
+
+/**
  * Main View Model used by knockout. Contains a list of map requests used to generate history. 
  */
 function MapViewModel(){
@@ -7,7 +24,7 @@ function MapViewModel(){
 	// Array of all maps that have been generated.
 	self.maps = ko.observableArray([]);	
 	
-	/**
+	 /**
 	  * Main map production method. 
 	  * Generates a map for the specified location and shows it in the main view window.
 	  * The generated map is saved in the history so that it can be redrawn later or used to produce a tiled map.
@@ -61,7 +78,21 @@ function MapViewModel(){
 			$("#deletion-tab").hide();
 		}
 	}
+	
+	self.tileMaps = function() {
+		if(mapsFit(self.maps().filter(function(x){return x.size == 3}).length,
+					  self.maps().filter(function(x){return x.size == 2}).length,
+					  self.maps().filter(function(x){return x.size == 1}).length, 
+					  parseInt($('#tiling-width').val()), 
+					  parseInt($('#tiling-height').val()))) {
+			//TODO
+		} else {
+			alert("Doesn't fit!");
+		}
+	}
+	
 }
+
 
 /**
  * Initialises the view model and generates the seed map.

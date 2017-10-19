@@ -195,12 +195,14 @@ input[type="checkbox"].option-value:checked:before {
     width: 102px;
 }
 
-#generate-button{
+.submit-button{
     border: 3px solid black;
     padding: 10px 20px;
     background-color: white;
     float: right;
     cursor: pointer;
+	width: 206px;
+    text-align: center;
 }
 
 
@@ -372,3 +374,16 @@ input[type="checkbox"].option-value:checked:before {
     text-align: center;
 }
 
+#tiling-size-bar {
+    padding-top: 20px;
+    padding-bottom: 10px;	
+}
+
+#tiling-size-bar input {
+    width: 41px;
+	height: 20px;
+
+    margin-left: 54px;
+    border: 3px solid black;
+    text-align: center;
+}
