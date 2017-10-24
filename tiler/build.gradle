@@ -18,9 +18,15 @@ buildscript {
 apply plugin: 'kotlin' // Required for Kotlin integration
 apply plugin: "kotlin-spring" // See https://kotlinlang.org/docs/reference/compiler-plugins.html#kotlin-spring-compiler-plugin
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 
 jar {
-    baseName = 'gs-rest-service'
+    baseName = 'tiler'
+    version = '0.1.0'
+}
+
+war {
+    baseName = 'tiler'
     version = '0.1.0'
 }
 
@@ -29,9 +35,10 @@ repositories {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
-    compile 'org.springframework.boot:spring-boot-starter-web'
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
 }
 
 compileKotlin {

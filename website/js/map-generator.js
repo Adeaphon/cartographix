@@ -80,12 +80,28 @@ function MapViewModel(){
 	}
 	
 	self.tileMaps = function() {
+		var width = $('#tiling-width').val();
+		var height = $('#tiling-height').val();
+		
 		if(mapsFit(self.maps().filter(function(x){return x.size == 3}).length,
 					  self.maps().filter(function(x){return x.size == 2}).length,
 					  self.maps().filter(function(x){return x.size == 1}).length, 
-					  parseInt($('#tiling-width').val()), 
-					  parseInt($('#tiling-height').val()))) {
-			//TODO
+					  parseInt(width), 
+					  parseInt(height))) {
+			var request = $.ajax({
+				method: 'GET',
+				url: '/tiler-0.1.0/tile?', 
+				data: {height: height, width: width}
+			});
+	
+			request.done(function(result) {
+				alert(result);
+			});
+			
+			request.fail(function(jqXHR, message) {
+				alert("Botched it: " + message);
+			});
+			
 		} else {
 			alert("Doesn't fit!");
 		}
