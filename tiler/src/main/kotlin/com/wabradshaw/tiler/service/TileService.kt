@@ -26,8 +26,8 @@ import javax.swing.JLabel
 class TileService {
 
     @GetMapping(value = "/tile")
-    fun tile(@RequestParam(value = "height") width: Int,
-                 @RequestParam(value = "width") height: Int,
+    fun tile(@RequestParam(value = "width") width: Int,
+                 @RequestParam(value = "height") height: Int,
              @RequestParam(value = "target") target: List<String>): ByteArray {
 
         //TODO: Read in image list (+ size, hue
@@ -35,7 +35,6 @@ class TileService {
         var image: Image? = null
         val url = URL("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBg7DmTKr7MMRzfcVT1Q9JXx-jI0xNiXME&center=AB24%203LR&zoom=13&scale=2&size=600x640&maptype=roadmap&style=feature:all|color:0xffffff&style=feature:water|color:0x2a435d&style=feature:poi|color:0x2a435d&style=feature:road|color:0xffffff&style=feature:transit|color:0xffffff&style=feature:landscape.man_made|color:0x3d7ab6&style=feature:poi.school|color:0x3d7ab6&style=feature:landscape.natural|color:0x37618a&style=feature:poi.park|color:0x37618a&style=feature:poi.sports_complex|color:0x37618a&style=feature:poi.business|color:0x37618a&style=feature:poi.attraction|color:0xffffff&style=feature:poi.place_of_worship|color:0xffffff&style=feature:poi.government|color:0xffffff&style=feature:poi.medical|color:0xffffff&style=feature:all|element:labels|visibility:off")
         image = ImageIO.read(url)
-
 
         var image2: Image? = null
         val url2 = URL("https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBg7DmTKr7MMRzfcVT1Q9JXx-jI0xNiXME&center=AB24%203LR&zoom=5&scale=2&size=600x640&maptype=roadmap&style=feature:all|color:0xffffff&style=feature:water|color:0x2a435d&style=feature:poi|color:0x2a435d&style=feature:road|color:0xffffff&style=feature:transit|color:0xffffff&style=feature:landscape.man_made|color:0x3d7ab6&style=feature:poi.school|color:0x3d7ab6&style=feature:landscape.natural|color:0x37618a&style=feature:poi.park|color:0x37618a&style=feature:poi.sports_complex|color:0x37618a&style=feature:poi.business|color:0x37618a&style=feature:poi.attraction|color:0xffffff&style=feature:poi.place_of_worship|color:0xffffff&style=feature:poi.government|color:0xffffff&style=feature:poi.medical|color:0xffffff&style=feature:all|element:labels|visibility:off")
