@@ -45,7 +45,7 @@ Thumbs.db
 ignore/
 */.idea/
 */build/
-
+*/out/
 
 # Created by https://www.gitignore.io/api/java,gradle,intellij
 

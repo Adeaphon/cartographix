@@ -95,7 +95,7 @@ function MapViewModel(){
 			});
 	
 			request.done(function(result) {
-				alert(result);
+				$('#image').attr('src', 'data:image/png;base64,' + result);
 			});
 			
 			request.fail(function(jqXHR, message) {
