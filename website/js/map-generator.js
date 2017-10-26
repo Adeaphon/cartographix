@@ -88,10 +88,13 @@ function MapViewModel(){
 					  self.maps().filter(function(x){return x.size == 1}).length, 
 					  parseInt(width), 
 					  parseInt(height))) {
+						  
+			var hist= self.maps().map(function(x){return x.asQuery()});	
+
 			var request = $.ajax({
 				method: 'GET',
 				url: '/tiler-0.1.0/tile?', 
-				data: {height: height, width: width}
+				data: {height: height, width: width, target: hist.join(",")}
 			});
 	
 			request.done(function(result) {
