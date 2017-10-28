@@ -53,7 +53,7 @@ class CanvasPainterTest {
     }
 
     /**
-     * Saves
+     * Saves the output to a file so it can be viewed and tested.
      */
     private fun save(output:ByteArray, name:String){
         try {
@@ -63,6 +63,9 @@ class CanvasPainterTest {
         }
     }
 
+    /**
+     * Checks that an image file fits the given dimensions.
+     */
     private fun checkSize(width:Int, height:Int, name:String){
         try {
             val image = ImageIO.read(File("$path$name$type"))
