@@ -1,4 +1,4 @@
-package com.wabradshaw.tiler.control
+package com.wabradshaw.cartografix.tiler.control
 
 import java.awt.Image
 import java.awt.image.BufferedImage
@@ -14,7 +14,7 @@ import javax.imageio.ImageIO
  */
 class Tiler {
 
-    fun tile(height: Int, width: Int, targets:List<String>, strategy:TileStrategy): ByteArrayOutputStream {
+    fun tile(height: Int, width: Int, targets:List<String>, strategy: TileStrategy): ByteArrayOutputStream {
 
         return strategy.canvasPainter.paint(targets)
 

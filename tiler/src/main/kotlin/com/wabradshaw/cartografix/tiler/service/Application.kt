@@ -1,4 +1,4 @@
-package com.wabradshaw.tiler.service
+package com.wabradshaw.cartografix.tiler.service
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

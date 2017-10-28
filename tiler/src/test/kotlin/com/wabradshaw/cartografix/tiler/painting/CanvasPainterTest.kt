@@ -1,4 +1,4 @@
-package com.wabradshaw.tiler.painting
+package com.wabradshaw.cartografix.tiler.painting
 
 import org.junit.Test
 
@@ -23,7 +23,7 @@ class CanvasPainterTest {
      */
     @Test
     fun testPaintExists() {
-        val painter:CanvasPainter = CanvasPainter(1200,80)
+        val painter: CanvasPainter = CanvasPainter(1200, 80)
 
         val content = listOf(abz_L_blue)
 
@@ -40,7 +40,7 @@ class CanvasPainterTest {
      */
     @Test
     fun testPaintDifferentSize() {
-        val painter:CanvasPainter = CanvasPainter(120,80)
+        val painter: CanvasPainter = CanvasPainter(120, 80)
 
         val content = listOf(abz_L_blue)
 

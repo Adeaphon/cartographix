@@ -1,4 +1,4 @@
-package com.wabradshaw.tiler.painting
+package com.wabradshaw.cartografix.tiler.painting
 
 import java.awt.Image
 import java.awt.image.BufferedImage

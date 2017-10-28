@@ -1,8 +1,8 @@
-package com.wabradshaw.tiler.service
+package com.wabradshaw.cartografix.tiler.service
 
-import com.wabradshaw.tiler.control.TileStrategy
-import com.wabradshaw.tiler.control.Tiler
-import com.wabradshaw.tiler.painting.CanvasPainter
+import com.wabradshaw.cartografix.tiler.control.TileStrategy
+import com.wabradshaw.cartografix.tiler.control.Tiler
+import com.wabradshaw.cartografix.tiler.painting.CanvasPainter
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
@@ -22,7 +22,7 @@ class TileService {
              @RequestParam(value = "height") height: Int,
              @RequestParam(value = "target") targets: List<String>): ByteArray {
 
-        val strategy: TileStrategy = TileStrategy(CanvasPainter(1200,80))
+        val strategy: TileStrategy = TileStrategy(CanvasPainter(1200, 80))
         return Base64.getEncoder().encode(tileController.tile(width, height, targets, strategy).toByteArray())
     }
 

@@ -1,6 +1,6 @@
-package com.wabradshaw.tiler.control
+package com.wabradshaw.cartografix.tiler.control
 
-import com.wabradshaw.tiler.painting.CanvasPainter
+import com.wabradshaw.cartografix.tiler.painting.CanvasPainter
 
 /**
  * A TileStrategy bundles the classes necessary to manage a tiling strategy.
