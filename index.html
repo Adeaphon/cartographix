@@ -19,40 +19,41 @@
     <body>
         <div id="menu">
            <h1>CARTOGRAPHIX</h1>
-            <h4>v1.0.0</h6>
-			<div class="option-bar">
-				<div class="option-label">Location</div>
-				<input id="location" class="option-value" value="AB24 3LR"/>
-			</div>
-			<div class="option-bar">
-				<div class="option-label">Zoom</div>
-				<div id="zoom-slider" class="option-value">
-					<div id="zoom-handle" class="numbered-slider ui-slider-handle"></div>
+            <div id="options">
+				<div class="option-bar">
+					<div class="option-label">Location</div>
+					<input id="location" class="option-value" value="AB24 3LR"/>
 				</div>
-			</div>
-			<div class="option-bar">
-				<div class="option-label">Colour</div>
-				<div id="hue-slider" class="option-value">
-					<div id="hue-handle" class="numbered-slider ui-slider-handle"></div>
+				<div class="option-bar">
+					<div class="option-label">Zoom</div>
+					<div id="zoom-slider" class="option-value">
+						<div id="zoom-handle" class="numbered-slider ui-slider-handle"></div>
+					</div>
 				</div>
-			</div>
-			<div class="option-bar">
-				<div class="option-label">Size</div>
-				<div id="size-slider" class="option-value">
-					<div id="size-handle" class="numbered-slider ui-slider-handle"></div>
+				<div class="option-bar">
+					<div class="option-label">Colour</div>
+					<div id="hue-slider" class="option-value">
+						<div id="hue-handle" class="numbered-slider ui-slider-handle"></div>
+					</div>
 				</div>
-			</div>
-			<div class="option-bar option-checkbox">
-				<div class="option-label"><div>Greyscale</div>
-				<input id="greyscale" type="checkbox" class="option-value"/></div>
-			</div>
-			<div class="option-bar option-checkbox">
-				<div class="option-label"><div>Schools</div>
-				<input id="universities" type="checkbox" class="option-value" checked/></div>
-			</div>
-			<div class="option-bar option-checkbox">
-				<div class="option-label"><div>Parks</div>
-				<input id="parks" type="checkbox" class="option-value"/></div>
+				<div class="option-bar">
+					<div class="option-label">Size</div>
+					<div id="size-slider" class="option-value">
+						<div id="size-handle" class="numbered-slider ui-slider-handle"></div>
+					</div>
+				</div>
+				<div class="option-bar option-checkbox">
+					<div class="option-label"><div>Greyscale</div>
+					<input id="greyscale" type="checkbox" class="option-value"/></div>
+				</div>
+				<div class="option-bar option-checkbox">
+					<div class="option-label"><div>Schools</div>
+					<input id="universities" type="checkbox" class="option-value" checked/></div>
+				</div>
+				<div class="option-bar option-checkbox">
+					<div class="option-label"><div>Parks</div>
+					<input id="parks" type="checkbox" class="option-value"/></div>
+				</div>
 			</div>
             <a id="generate-button" data-bind="click: getMap">Generate</a>
         </div>

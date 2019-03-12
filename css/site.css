@@ -70,6 +70,15 @@ body {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+#options {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 #content {
@@ -151,11 +160,14 @@ body {
   }
   
 .option-bar {
-	height: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	flex-grow: 1;
 }
 
-.option-label {
-    padding-bottom: 15px;
+.ui-slider {
+    margin-bottom: 15px;
+	margin-top: 15px;
 }
 
 input.option-value {
@@ -201,6 +213,9 @@ input[type="checkbox"].option-value:checked:before {
     background-color: white;
     float: right;
     cursor: pointer;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 
