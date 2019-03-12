@@ -62,27 +62,31 @@
 				<img id="image"/>
 			</div>
         </div>
-		<div id="history" data-bind="sortable: maps">
-			<div class="history-item">
-				<img class="history-icon" data-bind="click: display, attr: {src: asQuery()}"/>
-				<div class="history-settings">
-					<div class="history-location" data-bind="text: place"></div>
-					<div class="history-settings-row">
-						<div class="history-setting history-zoom" data-bind="text: zoom"></div>
-						<div class="history-setting history-size" data-bind="text: sizeIcon"></div>
-						<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: greyscale" disabled/>
-						<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: schools" disabled/>
-						<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: parks" disabled/>
+		<div id="history-wrapper">
+			<div id="deletion-wrapper">
+				<div id="deletion-tab" data-bind="click: $root.restoreMap()">Map deleted. Click here to undo.</div>
+			</div>
+			<div id="history" data-bind="sortable: maps">
+				<div class="history-item">
+					<img class="history-icon" data-bind="click: display, attr: {src: asQuery()}"/>
+					<div class="history-settings">
+						<div class="history-location" data-bind="text: place"></div>
+						<div class="history-settings-row">
+							<div class="history-setting history-zoom" data-bind="text: zoom"></div>
+							<div class="history-setting history-size" data-bind="text: sizeIcon"></div>
+							<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: greyscale" disabled/>
+							<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: schools" disabled/>
+							<input class="history-setting history-checkbox" type="checkbox" data-bind="checked: parks" disabled/>
+						</div>
 					</div>
-				</div>
-				<div class="history-options">
-					<div class="history-view fa fa-arrows" aria-hidden="true">
-						<!--Doesn't actually do anthing, just wanted to highlight you can drag-->
+					<div class="history-options">
+						<div class="history-view fa fa-arrows" aria-hidden="true">
+							<!--Doesn't actually do anthing, just wanted to highlight you can drag-->
+						</div>
+						<div class="history-delete fa fa-times" data-bind="click: $root.removeMap" aria-hidden="true"></div>
 					</div>
-					<div class="history-delete fa fa-times" data-bind="click: $root.removeMap" aria-hidden="true"></div>
 				</div>
 			</div>
 		</div>
-		<div id="deletion-tab" data-bind="click: $root.restoreMap()">Map deleted. Click here to undo.</div>
     </body>
 </html>
