@@ -9,10 +9,9 @@
 	src: url(fonts/montserrat/Montserrat-Regular.otf);
 }
 
-h1 {
-	font-weight: 900;
-	font-size:30px;
-	color:#fff;
+#title {
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 * {
